@@ -1,0 +1,93 @@
+{% extends "basic.html" %}
+
+{% block user_info %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile and Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            height: 262px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .container h1 {
+            margin-top: 6px;
+        }
+        .container form,
+        .container .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="submit"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            transition: border-color 0.3s;
+        }
+        .container input[type="text"]:focus,
+        .container input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .container input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .profile-info div {
+            margin-bottom: 11px;
+            padding: 10px;
+            width: 100%;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .profile-info div span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ваші особисті дані</h1>
+        <div class="profile-info">
+            <div><span>Ім'я користувача:</span> {{ user[0][1] }}</div>
+            <div><span>Улюблене аніме:</span> {{ user[0][3] }}</div>
+            <div><span>Улюблений фільм:</span> {{ user[0][4] }}</div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock user_info %}

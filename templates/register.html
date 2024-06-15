@@ -1,0 +1,90 @@
+{% extends "basic.html" %}
+
+{% block register %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+        .register-container h2 {
+            margin-bottom: 20px;
+        }
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .register-container form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .register-container form input[type="text"],
+        .register-container form input[type="password"] {
+            margin-bottom: 13px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .register-container form input[type="text"]:focus,
+        .register-container form input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .register-container form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 7.5px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .register-container form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Реєстрація</h2>
+        <form action="{{ url_for('register') }}" method="post">
+            <label for="username">Ім'я користувача:</label>
+            <input type="text" id="username" name="username" required aria-label="Username">
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required aria-label="Password">
+
+            <label for="anime">Улюблене аніме:</label>
+            <input type="text" id="anime" name="anime" required aria-label="Anime">
+
+            <label for="movie">Улюблений фільм:</label>
+            <input type="text" id="movie" name="movie" required aria-label="Movie">
+
+            <input type="submit" value="Реєстрація">
+        </form>
+    </div>
+</body>
+</html>
+{% endblock register %}

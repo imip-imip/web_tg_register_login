@@ -1,0 +1,83 @@
+{% extends "basic.html" %}
+
+{% block login %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            margin-left: 715px;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .login-container form input[type="text"],
+        .login-container form input[type="password"] {
+            margin-bottom: 15px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .login-container form input[type="text"]:focus,
+        .login-container form input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .login-container form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 7.5px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-container form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Логін</h1>
+        <form action="/login" method="post">
+            <label for="username">Ім'я користувача:</label>
+            <input type="text" id="username" name="username" required aria-label="Username">
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required aria-label="Password">
+
+            <input type="submit" value="Логін">
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock login %}
